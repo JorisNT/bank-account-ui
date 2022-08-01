@@ -1,6 +1,6 @@
 # BankAccount UI
 
-This project is a simple version of bank account ui related to his server project on : https://gitlab.com/JorisNT/bank-account <br /><br />
+This project is a simple version of bank account ui related to his server project on : https://github.com/JorisNT/bank-account <br /><br />
 
 ENV: Angular 14. Node 16.15<br />
 
