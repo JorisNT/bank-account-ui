@@ -1,0 +1,7 @@
+<div class="t-container" *ngIf="transaction">
+  <div class="t-reason">
+    <span>{{ transaction.reason }}</span>
+    <span class="t-date">{{ transaction.creationDate|date:'short' }}</span>
+  </div>
+  <div>{{ transaction.amount|amount:transaction.type:'€' }}</div>
+</div>

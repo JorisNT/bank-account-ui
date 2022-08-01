@@ -1,0 +1,41 @@
+<div class="account-container" *ngIf="bankAccount">
+  <div class="account-content">
+    <h1>Welcome to your account, {{ bankAccount.username }}</h1>
+    <br>
+    <div class="account-balance">
+      <h2>Balance</h2>
+      <h2>{{ bankAccount.balance|currency:'EUR':'symbol'}}</h2>
+    </div>
+
+    <div>
+      <app-transaction-view *ngFor="let item of bankAccount.transactions" [transaction]="item"></app-transaction-view>
+    </div>
+    <br><br>
+    <mat-divider></mat-divider>
+
+    <h3>Place a transaction</h3>
+    <form *ngIf="transactionForm" [formGroup]="transactionForm" class="account-transaction">
+      <mat-form-field appearance="fill">
+        <mat-label>Operation</mat-label>
+        <mat-select formControlName="operation">
+          <mat-option [value]="TransactionType.CREDIT">Credit</mat-option>
+          <mat-option [value]="TransactionType.DEBIT">Debit</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Reason</mat-label>
+        <input formControlName="reason" matInput placeholder="Amount">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input formControlName="amount" type="number" matInput placeholder="Amount">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="onClick()" [disabled]="!transactionForm.valid">Place transaction</button>
+      <br><br>
+    </form>
+  </div>
+</div>
+

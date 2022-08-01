@@ -1,0 +1,19 @@
+.account-container {
+  display: flex;
+  justify-content: center;
+
+  .account-content {
+    margin-top: 2%;
+    width: 30%;
+  }
+
+  .account-balance {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .account-transaction {
+    display: flex;
+    flex-direction: column;
+  }
+}
